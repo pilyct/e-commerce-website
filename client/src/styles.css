@@ -1,12 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --black: #000;
-  --white: #fff;
-  --primary-red: #C02942;
-  --primary-pink: #FAD7D7;
-  /* --secondary-pink: #F4C2C2; */
+  --black: #29271e;
+  --primary-orange: #d93f12;
+  --primary-beige: #fbf9f7;
+  --primary-green: #2f8680;
+  --primary-blue:#1c5c7e;
+  --secondary-blue: #86bcb6; 
+
+  /* Media queries */
+  /* --menu-breakpoint: 400px;
+  --menu-height: 50px; */
 }
 
 * {
@@ -15,7 +19,8 @@
 
 html {
   font-size: 16px;
-  background: var(--primary-pink)
+  font-display: auto;
+  background: var(--primary-beige)
 }
 
 html, button {

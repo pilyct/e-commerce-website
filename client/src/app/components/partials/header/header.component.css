@@ -1,17 +1,21 @@
+
 header {
   position: relative;
   padding: 0;
-  border-bottom: 2px solid var(--primary-red);
+  border-bottom: 2px solid var(--primary-blue);
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 5px;
 }
 
 a {
-  color: black;
+  color: var(--black);
 }
 
 a:hover {
-  /* color: #e2a302; */
-  color: #c02942;
+  color: var(--primary-orange);
   cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
 
 .container {
@@ -25,9 +29,13 @@ a:hover {
 a.logo {
   font-weight: bold;
   font-family: "DynaPuff";
-  color: var(--primary-red);
+  color: var(--primary-blue);
   font-size: 32px;
-  padding: 1rem;
+  /* padding: 1rem; */
+}
+
+a.logo:hover, a span {
+  text-decoration: none;
 }
 
 ul {
@@ -42,11 +50,11 @@ ul a {
 }
 
 a span {
-  background: black;
-  color: white;
-  padding: 0.1rem 0.45rem;
+  background: var(--primary-orange);
+  color: var(--primary-beige);
+  padding: 0.25rem 0.45rem;
   border-radius: 100rem;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 }
 
 .menu-container {
@@ -56,9 +64,9 @@ a span {
 .menu {
   position: absolute;
   z-index: 1;
-  background: var(--primary-pink);
+  background: var(--primary-beige);
   display: none;
-  border-radius: 0.5rem;
+  border-radius: 0.1rem;
   box-shadow: 0 4px 8px 0 rgba(192, 41, 66, 0.11), 0 6px 20px 0 rgba(192, 41, 66, 0.12);
 }
 
@@ -70,4 +78,6 @@ a span {
   width: 100%;
   min-width: 8rem;
 }
+
+
 
