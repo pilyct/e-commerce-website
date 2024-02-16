@@ -1,14 +1,15 @@
 
 header {
   position: relative;
-  padding: 0;
-  border-bottom: 2px solid var(--primary-blue);
+  padding: 0 10%;
+  border-bottom: 2px solid var(--primary-green);
   outline: 2px solid var(--primary-orange);
   outline-offset: 5px;
 }
 
 a {
   color: var(--black);
+  padding-left: 0.8%;
 }
 
 a:hover {
@@ -19,19 +20,19 @@ a:hover {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 
 a.logo {
   font-weight: bold;
   font-family: "DynaPuff";
-  color: var(--primary-blue);
+  color: var(--primary-green);
   font-size: 32px;
-  /* padding: 1rem; */
+  /* padding-left: 0.5%; */
 }
 
 a.logo:hover, a span {
@@ -67,7 +68,7 @@ a span {
   background: var(--primary-beige);
   display: none;
   border-radius: 0.1rem;
-  box-shadow: 0 4px 8px 0 rgba(192, 41, 66, 0.11), 0 6px 20px 0 rgba(192, 41, 66, 0.12);
+  box-shadow: 0 4px 8px 0 rgba(41, 39, 30, 0.11), 0 6px 20px 0 rgba(41, 39, 30, 0.12);
 }
 
 .menu-container:hover .menu {

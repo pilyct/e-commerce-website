@@ -1,0 +1,24 @@
+<ul>
+  <li *ngFor="let food of foods">
+    <a routerLink="/food/{{food.id}}" (mouseenter)="onMouseEnter(food)" (mouseleave)="onMouseLeave(food)">
+      <img [src]="food.isHovered ? food.imageUrl[1] : food.imageUrl[0]" [alt]="food.name" />
+      <div class="content">
+        <div class="name">
+          {{food.name}}
+        </div>
+
+        <div class="description">
+          {{food.description}}
+        </div>
+        
+        <span class="favourite {{food.favourite ? '' : 'not'}}">♥</span>
+
+        <div class="price">
+          <span>
+            {{food.price | currency:'EUR'}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
