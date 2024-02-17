@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  --white: #fff;
   --black: #29271e;
   --grey: #808080;
   --lightgrey: #F4F2F1;
@@ -22,7 +23,7 @@
 html {
   font-size: 16px;
   font-display: auto;
-  background: var(--primary-beige)
+  background: var(--white)
 }
 
 html, button {

@@ -1,0 +1,25 @@
+div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div a{
+  background-color: var(--lightgrey);
+  color:var(--black);
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+div a:hover {
+  color: var(--primary-orange);
+}
+
+div a.active {
+  color: var(--primary-orange);
+}
+
+

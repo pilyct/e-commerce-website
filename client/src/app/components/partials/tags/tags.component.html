@@ -1,0 +1,5 @@
+<div>
+  <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}" (click)="onTagClick(tag)" [class.active]="isActiveTag(tag)">
+    {{tag.name}}({{tag.count}})
+  </a>
+</div>
