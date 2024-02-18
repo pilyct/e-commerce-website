@@ -11,7 +11,7 @@ export const sample_foods: Food[] = [
     favourite: true,
     origins: ['Italy'],
     stars: 4.5,
-    imageUrl: ['assets/food-1.webp', 'assets/ingredients-1.webp'],
+    imageUrl: ['assets/food-1.webp', 'assets/ingredients-1.webp', 'assets/food-1-carousel-1.webp', 'assets/food-1-carousel-2.webp'],
     tags: ['Pasta', 'Protein'],
     isHovered: false,
   },

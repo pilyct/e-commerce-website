@@ -60,7 +60,7 @@ li a img {
   color: var(--grey);
 }
 
-.price{
+.price {
   position: absolute;
   left: 40%;
   padding: 0 100% 0 0;
