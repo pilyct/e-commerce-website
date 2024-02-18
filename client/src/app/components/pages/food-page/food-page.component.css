@@ -1,9 +1,26 @@
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  flex-wrap: wrap;
+  margin: 2rem 0 0 13rem;
+}
+
+.breadcrumb a {
+  font-style: italic;
+  color: var(--grey);
+}
+
+.breadcrumb .home:hover {
+  text-decoration: underline;
+}
+
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 3rem 12rem;
+  margin: 1rem 12rem 0 12rem;
 }
 
 .container > *{

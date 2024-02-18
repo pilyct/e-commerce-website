@@ -1,6 +1,10 @@
+<div class="breadcrumb">
+  <a class="home" routerLink="/">home</a>
+  <a>/{{food.name}}</a>
+</div>
+
 <div class="container">
   <img [src]="food.imageUrl[0]" [alt]="food.name" />
-  
   
   <div class="details">
     <div class="header">
@@ -31,6 +35,5 @@
     </div>
 
     <button>+ Add to cart</button>
-
   </div>
 </div>
