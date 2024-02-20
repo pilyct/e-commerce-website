@@ -1,8 +1,9 @@
 div{
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  /* margin-top: 3rem;
+  margin-bottom: 1.5rem; */
+  margin: 3rem 2rem 1.5rem 2rem;
 }
 
 input{
@@ -19,18 +20,17 @@ input{
 
 div button{
   height: 3rem;
-  width: 5rem;
+  width: 8rem;
   font-size: 1rem;
   border-radius: 0 10rem 10rem 0;
   border: none;
-  /* background-color: var(--primary-orange); */
-  background-color: var(--black);
+  background-color: var(--lightblack);
   color: var(--white);
-  /* opacity: 0.8; */
   outline: none;
+  text-transform: uppercase;
 }
 
 div button:hover{
-  opacity: 0.9;
+  background-color: var(--black);
   cursor: pointer;
 }

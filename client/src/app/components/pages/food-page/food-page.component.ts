@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FoodPageComponent implements OnInit {
   food!: Food;
+  selectedImageIndex: number = 0;
 
   constructor(
     @Inject(ActivatedRoute) private activatedRoute: ActivatedRoute,
@@ -26,5 +27,8 @@ export class FoodPageComponent implements OnInit {
     })
   }
 
+  selectMainImage(index: number): void {
+    this.selectedImageIndex = index;
+  }
   
 }

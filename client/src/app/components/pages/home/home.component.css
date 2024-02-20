@@ -15,7 +15,7 @@ li a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: var(--black);
+  color: var(--lightblack);
   flex: 0 0 33.333333%;
 }
 
@@ -42,7 +42,7 @@ li a img {
   font-weight: 600;
 }
 
-.description {
+.description_short {
   font-size: 14px;
   color: var(--grey);
   margin: 0.5rem 0;
@@ -64,7 +64,7 @@ li a img {
   position: absolute;
   left: 40%;
   padding: 0 100% 0 0;
-  color: var(--black);
+  color: var(--lightblack);
   margin-top: 0.4rem;
   font-size: 1.1rem;
   font-weight: bold;

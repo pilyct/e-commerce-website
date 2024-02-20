@@ -1,19 +1,4 @@
-.breadcrumb {
-  display: flex;
-  flex-direction: row;
-  justify-content:flex-start;
-  flex-wrap: wrap;
-  margin: 2rem 0 0 13rem;
-}
 
-.breadcrumb a {
-  font-style: italic;
-  color: var(--grey);
-}
-
-.breadcrumb .home:hover {
-  text-decoration: underline;
-}
 
 .container{
   display: flex;
@@ -28,12 +13,58 @@
   max-width: 40rem;
 }
 
-img{
+.images {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.main {
   flex: 1 0;
   object-fit: cover;
-  height: 35rem;
-  margin: 1rem;
+  height: 10rem;
+  margin: 0 1rem 0.25rem 1rem;
 }
+
+.other {
+  margin: 0 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.other img {
+  height: 10rem;
+  margin: 0.25rem 0.25rem;
+  opacity: 0.6;
+}
+
+.other img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+  .other img {
+    height: 6rem; 
+  }
+}
+
+.breadcrumb {
+  display: flex;
+  margin: 0.5rem 0 1rem 1rem;
+}
+
+.breadcrumb a {
+  font-style: italic;
+  color: var(--grey);
+}
+
+.breadcrumb .home:hover {
+  text-decoration: underline;
+}
+
+
 
 
 .details{
@@ -42,7 +73,7 @@ img{
   flex-direction: column;
   flex:1 0;
   padding: 2rem;
-  color: var(--black);
+  color: var(--lightblack);
   margin-left: 1rem;
 }
 
@@ -82,10 +113,11 @@ img{
 
 .origins::before {
   content: "Origin of recipe: ";
-  color: var(--black);
+  color: var(--lightblack);
   margin-top: 1rem;
   margin-right: 1rem;
 }
+
 
 .tags{
   display: flex;
@@ -99,28 +131,41 @@ img{
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 500;
-  color: var(--black);
+  color: var(--lightblack);
 }
 
 
-.price{
-  font-size: 1.8rem;
-  margin: 2rem 2rem 2rem 0;
-  color: var(--black);
+.price {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  color: var(--lightblack);
   text-align: center;
+}
+
+.price span {
+  font-size: 1.8rem;
+  align-self: center;
+}
+
+.price p {
+  font-size: 1rem;
+  color: var(--lightblack);
+  top: 0.3rem;
 }
 
 button{
   color: var(--white);
-  background: var(--black);
+  background: var(--lightblack);
   border: none;
   font-size: 1.2rem;
   padding: 1rem;
   border-radius: 10rem;
   outline: none;
+  text-transform: uppercase;
 }
 
 button:hover{
-  opacity: 0.9;
+  background: var(--black);
   cursor: pointer;
 }
