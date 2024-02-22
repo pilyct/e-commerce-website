@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { Food } from '../../../shared/models/Food';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { FoodService } from '../../../services/food.service';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Food } from '../../../shared/models/Food';
+import { FoodService } from '../../../services/food.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-food-page',
@@ -18,6 +19,9 @@ export class FoodPageComponent implements OnInit {
   constructor(
     @Inject(ActivatedRoute) private activatedRoute: ActivatedRoute,
     @Inject(FoodService) private foodService: FoodService,
+    @Inject(CartService) private cartService: CartService,
+    @Inject(Router) private router:Router,
+
   ){}
 
   ngOnInit(): void {
@@ -29,6 +33,11 @@ export class FoodPageComponent implements OnInit {
 
   selectMainImage(index: number): void {
     this.selectedImageIndex = index;
+  }
+
+  addToCart(){
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page');
   }
   
 }
