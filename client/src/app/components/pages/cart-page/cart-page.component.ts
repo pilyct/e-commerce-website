@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../../services/cart.service';
 import { Cart } from '../../../shared/models/Cart';
@@ -17,7 +17,7 @@ export class CartPageComponent implements OnInit {
   cart!:Cart;
 
   constructor(
-    @Inject(CartService) private cartService: CartService,
+    private cartService: CartService,
   ) {}
 
   ngOnInit(): void {
