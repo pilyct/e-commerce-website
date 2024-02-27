@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../../../services/food.service';
 import { Tag } from '../../../shared/models/Tag';
 import { Router, RouterLink } from '@angular/router';
@@ -17,12 +17,14 @@ export class TagsComponent implements OnInit {
   activeTag?: Tag;
 
   constructor(
-    @Inject(FoodService) private foodService: FoodService,
-    @Inject(Router) private router: Router,
+    private foodService: FoodService,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
-    this.tags = this.foodService.getAllTags();
+    this.foodService.getAllTags().subscribe((serverTags => {
+      this.tags = serverTags;
+    }));
   }
 
   onTagClick(tag: Tag): void {

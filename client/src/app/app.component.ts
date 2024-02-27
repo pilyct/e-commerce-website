@@ -8,8 +8,9 @@ import { HomeComponent } from './components/pages/home/home.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, RouterLink, HeaderComponent, HomeComponent]
+    imports: [RouterOutlet, RouterLink, HeaderComponent, HomeComponent],
 })
 export class AppComponent {
   title = 'client';
+
 }
