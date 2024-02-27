@@ -5,7 +5,7 @@ div{
 }
 
 div a{
-  background-color: var(--lightgrey);
+  background-color: var(--lightgrey-1);
   color:var(--lightblack);
   opacity: 0.8;
   padding: 0.3rem 1rem;

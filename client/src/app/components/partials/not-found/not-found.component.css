@@ -1,0 +1,24 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 15rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+a {
+  font-size: 1rem;
+  background-color: var(--lightblack);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: 10rem;
+  margin-top: 1rem;
+}
+
+a:hover {
+  background-color: var(--black);
+}

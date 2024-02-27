@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { CartService } from '../../../services/cart.service';
 import { Cart } from '../../../shared/models/Cart';
 import { CartItem } from '../../../shared/models/CartItem';
-import { TitleComponent } from "../../partials/title/title.component";
 import { RouterLink } from '@angular/router';
+import { NotFoundComponent } from "../../partials/not-found/not-found.component";
 
 @Component({
     selector: 'app-cart-page',
     standalone: true,
     templateUrl: './cart-page.component.html',
     styleUrl: './cart-page.component.css',
-    imports: [CommonModule, RouterLink, TitleComponent]
+    imports: [CommonModule, RouterLink, NotFoundComponent]
 })
 export class CartPageComponent implements OnInit {
   cart!:Cart;

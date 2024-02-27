@@ -1,50 +1,55 @@
+<app-not-found
+  [visible]="!food.id"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back To Homepage"
+></app-not-found>
 
-  <div class="container">
-    <div class="images">
-      <div class="breadcrumb">
-        <a class="home" routerLink="/">home</a>
-        <a>/{{food.name}}</a>
-      </div>
-      <img [src]="food.imageUrl[selectedImageIndex]" [alt]="food.name" class="main"/>
-      <div class="other">
-        <img *ngFor="let image of food.imageUrl.slice(0, selectedImageIndex).concat(food.imageUrl.slice(selectedImageIndex + 1))" 
-             [src]="image" 
-             [alt]="food.name" 
-             (click)="selectMainImage(food.imageUrl.indexOf(image))" />
-      </div>
+<div *ngIf="food.id" class="container">
+  <div class="images">
+    <div class="breadcrumb">
+      <a class="home" routerLink="/">home</a>
+      <a>/{{food.name}}</a>
     </div>
-    
-    <div class="details">
-      <div class="header">
-        <span class="name">{{food.name}}</span>
-        <span class="favourite {{food.favourite ? '' : 'not'}}">♥</span>
-      </div>
-      <!-- <div class="rating">STARS-RATING</div> -->
-      <div class="origins">
-        <span *ngFor="let origin of food.origins">
-          {{origin}}
-        </span>
-      </div>
-      
-      <div class="description_long">
-        {{food.description_long}}
-      </div>
-      
-      <div class="tags">
-        <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
-          {{tag}}
-        </a>
-      </div>
-      
-      <div class="price">
-        <span>
-          {{food.price}}€&nbsp;/
-        </span>
-        <p>
-          &nbsp;{{food.amount}}g
-        </p>
-      </div>
-  
-      <button (click)="addToCart()">+&nbsp; Add to cart</button>
+    <img [src]="food.imageUrl[selectedImageIndex]" [alt]="food.name" class="main"/>
+    <div class="other">
+      <img *ngFor="let image of food.imageUrl.slice(0, selectedImageIndex).concat(food.imageUrl.slice(selectedImageIndex + 1))" 
+           [src]="image" 
+           [alt]="food.name" 
+           (click)="selectMainImage(food.imageUrl.indexOf(image))" />
     </div>
   </div>
+  
+  <div class="details">
+    <div class="header">
+      <span class="name">{{food.name}}</span>
+      <span class="favourite {{food.favourite ? '' : 'not'}}">♥</span>
+    </div>
+    <!-- <div class="rating">STARS-RATING</div> -->
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">
+        {{origin}}
+      </span>
+    </div>
+    
+    <div class="description_long">
+      {{food.description_long}}
+    </div>
+    
+    <div class="tags">
+      <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+    
+    <div class="price">
+      <span>
+        {{food.price}}€&nbsp;/
+      </span>
+      <p>
+        &nbsp;{{food.amount}}g
+      </p>
+    </div>
+
+    <button (click)="addToCart()">+&nbsp; Add to cart</button>
+  </div>
+</div>

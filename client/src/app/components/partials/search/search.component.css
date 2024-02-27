@@ -11,7 +11,7 @@ input{
   border: none;
   height: 3rem;
   width: 20rem;
-  background-color: var(--lightgrey);
+  background-color: var(--lightgrey-1);
   padding: 1.2rem;
   font-size: 1.1rem;
   font-weight: 500;

@@ -15,15 +15,36 @@ export class CartService {
 
   addToCart(food: Food): void {
     let cartItem = this.cart.items.find((item) => item.food.id === food.id);
-    if (cartItem) 
-      return;
+    if (cartItem) {
+      // If item already exists, increment its quantity
+      cartItem.quantity++;
 
-    this.cart.items.push(new CartItem(food));
+      // Update the price based on the new quantity
+      cartItem.price = cartItem.quantity * cartItem.food.price;
+
+
+    } else {
+      // Otherwise, add a new cart item
+      this.cart.items.push(new CartItem(food));
+    }
     this.setCartToLocalStorage();
   }
 
-  removeFromCart(foodId: string):void {
-    this.cart.items = this.cart.items.filter(item => item.food.id != foodId);
+
+  removeFromCart(foodId: string): void {
+    let cartItem = this.cart.items.find((item) => item.food.id === foodId);
+    if (cartItem) {
+      // If item exists, decrement its quantity
+      cartItem.quantity--;
+
+      // Update the price based on the new quantity
+      cartItem.price = cartItem.quantity * cartItem.food.price;
+
+      // Remove the item from the cart if the quantity becomes zero
+      if (cartItem.quantity === 0) {
+        this.cart.items = this.cart.items.filter((item) => item.food.id !== foodId);
+      }
+    }
     this.setCartToLocalStorage();
   }
 
@@ -58,7 +79,11 @@ export class CartService {
   }
 
   private getCartFromLocalStorage(): Cart {
-    const cartJson = localStorage.getItem('Cart');
-    return cartJson ? JSON.parse(cartJson) : new Cart();
+    if (typeof localStorage !== 'undefined') {
+      const cartJson = localStorage.getItem('Cart');
+      return cartJson ? JSON.parse(cartJson) : new Cart();
+    } else {
+      return new Cart(); // Fallback if localStorage is not available
+    }
   }
 }

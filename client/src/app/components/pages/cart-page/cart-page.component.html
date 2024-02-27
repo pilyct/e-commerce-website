@@ -1,63 +1,68 @@
-<app-title title="Cart Page" margin="1.5rem 14.6%"></app-title>
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Your Cart Is Empty!"
+  resetLinkText="Go To Homepage"
+></app-not-found>
 
-<div class="container">
-  <div class="container-titles">
-    <ul class="titles">
-      <li>
-        <div class="space">&nbsp;</div>
-        <div>Product</div>
-        <div>Price</div>
-        <div>Quantity</div>
-        <div>Subtotal</div>
-        <div class="space">&nbsp;</div>
-      </li>
-    </ul>
-    <ul class="content">
-      <li *ngFor="let cartItem of cart.items">
-        <div>
-          <img [src]="cartItem.food.imageUrl[0]" [alt]="cartItem.food.name">
-        </div>
-  
-        <div>
-          <a routerLink="/food/{{cartItem.food.id}}">
-            {{cartItem.food.name}}
-          </a>
-        </div>
-  
-        <div>
-          {{cartItem.food.price}}€
-        </div>
-  
-        <div>
-          <select #quantitySelect
-          [value]="cartItem.quantity"
-          (change)="changeQuantity(cartItem, quantitySelect.value)">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        </div>
-
-        <div>
-          {{cartItem.price}}€
-        </div>
-    
-        <div>
-          <button class="remove-button" (click)="removeFromCart(cartItem)">
-            X
-          </button>
-        </div>
-      </li>
-    </ul>
+<div *ngIf="cart && cart.items.length" class="container">
+  <div class="title">
+    <h2>Your Cart ( {{cart.totalCount}} items )</h2>
   </div>
-  <div class="checkout">
-    <div>
-      <div class="foods-count">{{cart.totalCount}}</div>
-      <div class="total-price">{{cart.totalPrice.toFixed(2)}}€</div>
+  <section>
+    <table>
+        <thead>
+            <tr>
+              <th class="image">Image</th>
+              <th>Item</th>
+              <th>Each</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th class="remove">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartItem of cart.items">
+                <td>
+                  <img [src]="cartItem.food.imageUrl[0]" [alt]="cartItem.food.name">
+                </td>
+                <td>
+                  <a routerLink="/food/{{cartItem.food.id}}">
+                    {{cartItem.food.name}}
+                  </a>
+                </td>
+                <td>{{cartItem.food.price}}€</td>
+                <td class="quantity">
+                  <select #quantitySelect
+                    [value]="cartItem.quantity"
+                    (change)="changeQuantity(cartItem, quantitySelect.value)"
+                    id="quantitySelect-{{ cartItem.food.id }}">
+                    <option id="option-1">1</option>
+                    <option id="option-2">2</option>
+                    <option id="option-3">3</option>
+                    <option id="option-4">4</option>
+                    <option id="option-5">5</option>
+                  </select>
+                </td>
+                <td>{{cartItem.price}}€</td>
+                <td class="remove-cell">
+                  <button class="remove-button" (click)="removeFromCart(cartItem)">
+                    X
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  
+    <div class="checkout">
+        <h2>Checkout</h2>
+        <div class="subtotal">Subtotal: <span>{{cart.totalPrice.toFixed(2)}}€</span></div>
+        <div class="tax">Sales Tax: <span>0</span></div>
+        <div><p>* Free Shipping</p></div>
+        <div class="total-price"><span>{{cart.totalPrice.toFixed(2)}}€</span></div>
+        <button>Proceed to Checkout</button>
+        <div> 
+          <a class="home" routerLink="/">Keep Shopping</a>
+        </div>
     </div>
-  
-    <a routerLink="/checkout">Proceed to Checkout</a>
-  </div>
-  </div>
+  </section>
+</div>
