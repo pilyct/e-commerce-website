@@ -1,0 +1,44 @@
+<div class="container">
+  <div>
+    <img srcset="assets/login-pic.jpg" alt="Login picture - Asparagus"/>
+  </div>
+  <div class="details">
+    <div class="title">
+      <h2>Login</h2>
+      <p>Welcome to BiteMe!</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="input-container">
+      <label for="email">Your email</label>
+      <div>
+        <input id="email" type="email" placeholder="Email" formControlName="email" autocomplete="given-email"/>
+      </div>
+      <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="password">Your password</label>
+      <div>
+        <input id="password" type="password" placeholder="Password" formControlName="password" autocomplete="current-password"/>
+      </div>
+      <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+        <div *ngIf="fc['password'].errors['required']">Should not be empty</div>
+      </div>
+    </div>
+
+    <div class="button">
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="register">
+      <p>Do not have an account yet? <span>Register</span></p>
+    </div>
+
+
+    </form>
+  </div>
+</div>

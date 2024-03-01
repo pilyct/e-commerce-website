@@ -1,0 +1,116 @@
+.container{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  height: 100%;
+  padding: 2% 14.6%;
+  }
+  
+  .details{
+    width: 48rem;
+    align-self: center;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title h2 {
+    font-weight: bold;
+    font-family: "DynaPuff";
+    font-size: 52px;
+    padding: 0;
+    margin: 0;
+    color: var(--lightblack);
+  }
+
+  .title p {
+    font-weight: 450;
+    font-size: 24px;
+    color: var(--lightblack);
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 5rem; */
+  }
+
+  .input-container {
+    padding: 1rem 0;
+  }
+
+
+  input {
+    width: 20rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--lightblack);
+    font-size: 16px;
+    margin-top: 1rem;
+  }
+
+  button {
+    background-color: var(--lightblack);
+    color: var(--white);
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+    padding: 1rem 5rem;
+    text-transform: uppercase;
+  }
+  
+  button:hover {
+    background-color: var(--black);
+  }
+
+  .register {
+    font-size: 14px;
+  }
+
+  .register span {
+    font-weight: 600;
+    text-underline-offset: 0.3rem;
+  }
+
+  .register span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  img {
+    height: 700px;
+    margin-right: 3rem;
+  }
+  
+  .error-list{
+    color: red;
+  }
+
+  @media screen and (max-width: 400px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 2rem;
+  
+      /* Add box-sizing to include padding in the width calculation */
+      box-sizing: border-box;
+    }
+  
+    img {
+      height: 350px;
+      width: 100%;
+      object-fit: fill;
+      margin-bottom: 1rem;
+    }
+  }

@@ -16,11 +16,11 @@ div a{
 }
 
 div a:hover {
-  color: var(--primary-orange);
+  color: var(--primary-green);
 }
 
 div a.active {
-  color: var(--primary-orange);
+  color: var(--primary-green);
 }
 
 
