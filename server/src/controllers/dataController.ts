@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { sample_foods, sample_tags } from '../data';
+import { sample_foods, sample_tags, sample_users } from '../data';
+import generateTokenResponse from '../utils/generateTokenResponse';
 
 async function getFoods(req: Request, res: Response) {
   try {
@@ -56,10 +57,28 @@ async function getFoodById(req: Request, res: Response) {
   }
 }
 
+async function userLogin(req: Request, res: Response) {
+  try {
+    const {email, password} = req.body; // Destructuring Assignment
+    const user = sample_users.find(user => user.email === email && user.password === password);
+
+    if(user) {
+      res.send(generateTokenResponse(user));
+      res.status(200).json(user);
+    } else {
+      res.status(400).send('User name or password is not valid.')
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
+
 export {
   searchFoods,
   getFoods,
   getFoodById,
   getFoodsByTag,
   getTags,
+  userLogin,
 };

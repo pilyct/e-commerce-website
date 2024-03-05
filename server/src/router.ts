@@ -5,6 +5,7 @@ import {
   getFoodById,
   getFoodsByTag,
   getTags,
+  userLogin,
 } from './controllers/dataController';
 
 
@@ -15,5 +16,7 @@ router.get('/api/foods/search/:searchTerm', searchFoods);
 router.get('/api/foods/tags', getTags);
 router.get('/api/foods/tag/:tagName', getFoodsByTag);
 router.get('/api/foods/:foodId', getFoodById);
+
+router.post('/api/users/login', userLogin);
 
 export default router;
