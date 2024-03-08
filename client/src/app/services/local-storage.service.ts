@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import DOMPurify from 'dompurify';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalStorageService {
-
-  constructor() {}
+  
+  constructor() {
+    
+  }
 
   // Checks if localStorage is accessible in the current environment.
   isLocalStorageAvailable(): boolean {
@@ -15,7 +18,9 @@ export class LocalStorageService {
   // Stores a key-value pair in localStorage.
   setItem(key: string, value: string): void {
     if (this.isLocalStorageAvailable()) {
-      window.localStorage.setItem(key, value);
+      // const sanitizedValue = this.dompurify.sanitize(value);
+      const sanitizedValue = DOMPurify.sanitize(value);
+      window.localStorage.setItem(key, sanitizedValue);
     }
   }
 
