@@ -15,8 +15,8 @@
         <input id="email" type="email" placeholder="Email" formControlName="email" autocomplete="given-email"/>
       </div>
       <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
-        <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
-        <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
+        <div *ngIf="fc['email'].errors['required']">⚠ Should not be empty</div>
+        <div *ngIf="fc['email'].errors['email']">⚠ Email is not correct</div>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
         <input id="password" type="password" placeholder="Password" formControlName="password" autocomplete="current-password"/>
       </div>
       <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-        <div *ngIf="fc['password'].errors['required']">Should not be empty</div>
+        <div *ngIf="fc['password'].errors['required']">⚠ Should not be empty</div>
       </div>
     </div>
 
