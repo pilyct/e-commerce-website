@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 const generateTokenResponse: any = (user: any) => {
+  
   const token = jwt.sign({
     email:user.email, isAdmin:user.isAdmin
   }, 'someRandomText', {
@@ -11,4 +12,4 @@ const generateTokenResponse: any = (user: any) => {
   return user;
 }
 
-export default generateTokenResponse
+export default generateTokenResponse;

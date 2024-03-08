@@ -62,12 +62,15 @@ async function userLogin(req: Request, res: Response) {
     const {email, password} = req.body; // Destructuring Assignment
     const user = sample_users.find(user => user.email === email && user.password === password);
 
-    if(user) {
-      res.send(generateTokenResponse(user));
-      res.status(200).json(user);
+    if(!user) {
+      return res.status(400).send('User name or password is not valid.')
+      
     } else {
-      res.status(400).send('User name or password is not valid.')
+
+      const userWithToken = generateTokenResponse(user);
+      res.status(200).json(userWithToken);
     }
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });
