@@ -9,15 +9,15 @@ import {
 } from '../controllers/food.controller';
 
 
-const foodsRouter = Router();
+const foodRouter = Router();
 
-foodsRouter.get('/seed', seedFoods);
+foodRouter.get('/seed', seedFoods);
 
-foodsRouter.get('/', getFoods);
-foodsRouter.get('/search/:searchTerm', searchFoods);
-foodsRouter.get('/tags', getTags);
-foodsRouter.get('/tag/:tagName', getFoodsByTag);
-foodsRouter.get('/:foodId', getFoodById);
+foodRouter.get('/', getFoods);
+foodRouter.get('/search/:searchTerm', searchFoods);
+foodRouter.get('/tags', getTags);
+foodRouter.get('/tag/:tagName', getFoodsByTag);
+foodRouter.get('/:foodId', getFoodById);
 
-export default foodsRouter;
+export default foodRouter;
 

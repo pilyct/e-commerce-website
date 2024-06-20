@@ -25,8 +25,9 @@ export const seedUsers = asyncHandler(async (req, res) => {
 
 async function userLogin(req: Request, res: Response) {
   try {
-    const {email, password} = req.body; // Destructuring Assignment
-    const user = sample_users.find(user => user.email === email && user.password === password);
+    const {email, password} = req.body; 
+    // const user = sample_users.find(user => user.email === email && user.password === password);
+    const user = await UserModel.findOne({email, password});
 
     if(!user) {
       return res.status(400).send('User name or password is not valid.')
@@ -42,6 +43,8 @@ async function userLogin(req: Request, res: Response) {
     res.status(500).json({ error: 'Internal server error' });
   }
 }
+
+
 
 export {
   userLogin,

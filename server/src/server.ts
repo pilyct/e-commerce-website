@@ -4,8 +4,8 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 // import router from './router'
-import foodsRouter from './routers/food.router';
-import usersRouter from './routers/user.router';
+import foodRouter from './routers/food.router';
+import userRouter from './routers/user.router';
 import { dbConnect } from './models/database.congif';
 
 const app = express();
@@ -18,8 +18,8 @@ app.use(cors({
 app.use(express.json());
 
 // app.use(router);
-app.use('/api/foods', foodsRouter);
-app.use('/api/users', usersRouter);
+app.use('/api/foods', foodRouter);
+app.use('/api/users', userRouter);
 
 
 dbConnect();

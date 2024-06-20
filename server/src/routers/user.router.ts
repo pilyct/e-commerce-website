@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { seedUsers, userLogin } from '../controllers/user.controller';
 
-const usersRouter = Router();
+const userRouter = Router();
 
-usersRouter.get('/seed', seedUsers);
+userRouter.get('/seed', seedUsers);
 
-usersRouter.post('/login', userLogin);
+userRouter.post('/login', userLogin);
 
-export default usersRouter;
+export default userRouter;
